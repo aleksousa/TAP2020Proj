@@ -48,6 +48,7 @@ if __name__ == '__main__':
 
     while len(G) < 2*target_edges:
         x, y = ri( 0, N-1), ri( 0, N-1)
+        if x == y: continue
         if not G.get((x,y)): G[ (x,y) ] = G[ (y,x) ] = 1
         
     # Printing the graph
