@@ -2,6 +2,10 @@
 
 Definição do Projeto da Disciplina TAP 2020
 
+## Motivação
+
+https://www.youtube.com/watch?v=faej5LqlNP4
+
 ## Instruções
 
 Desenvolver uma heurística/metaheurística para resolver o problema de
@@ -38,7 +42,7 @@ Seguem ***N*** linhas, representando a matriz de adjacências do grafo ***G***. 
 A sua heurística/meta-heurística deve produzir 2 linhas na saída. A primeira
 linha deve trazer o número de vértices selecionados. A segunda linha deve
 trazer um vetor de binários, separados por espaços, onde ***1*** indica que
-o vértices foi escolhido e ***0** indica que não.
+o vértices foi escolhido e ***0*** indica que não.
 
 ## Exemplos
 
