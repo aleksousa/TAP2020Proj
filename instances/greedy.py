@@ -62,5 +62,7 @@ if __name__ == '__main__':
             
             sol[ viz ] = COVERED
 
-    print( sol.count( 2 ), acc, sol)
+    
+    print( sol.count( IN_SOL ) )
+    print( ' '.join( map( lambda x: '1' if x==2 else '0' , sol   )   ) )
 
