@@ -13,6 +13,7 @@ import (
 type vertice struct {
 	index         int
 	peso          int
+	coberto       bool
 	ligacoes      map[int]int
 	totalLigacoes int
 }
@@ -78,7 +79,18 @@ func main() {
 	}
 	for acumulado < totalDesejado {
 		sort.SliceStable(vertices, func(i, j int) bool {
-			return vertices[i].totalLigacoes > vertices[j].totalLigacoes
+			if vertices[i].totalLigacoes > vertices[j].totalLigacoes {
+				return true
+			}
+			if vertices[i].totalLigacoes == vertices[j].totalLigacoes {
+				if vertices[i].coberto == false &&  vertices[j].coberto == true{
+					return true
+				}
+				if len(vertices[i].ligacoes) >= len(vertices[j].ligacoes) {
+					return true
+				}
+			}
+			return false
 		})
 		vert := vertices[0]
 		mapaSelect := vert.ligacoes
@@ -92,6 +104,8 @@ func main() {
 				if _, ok := vertices[k].ligacoes[km]; ok || vertices[k].index == km {
 					if ok {
 						delete(vertices[k].ligacoes, km)
+					} else {
+						vertices[k].coberto = true
 					}
 					vertices[k].totalLigacoes -= val
 				}
